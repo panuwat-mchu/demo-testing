@@ -2,6 +2,7 @@ package com.example.demoprofile;
 
 import lombok.extern.java.Log;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -16,6 +17,7 @@ public class ProfileController {
     }
 
     @GetMapping("/{id}")
+    @PreAuthorize("hasAuthority('SCOPE_profile:read')")
     public ResponseEntity<Profile> findById(
             @RequestHeader(name = "sessionRef") String sessionRef,
             @PathVariable String id
