@@ -11,7 +11,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests((authz) -> authz
-                .antMatchers("/profiles/**").hasAuthority("SCOPE_access-hello")
+                //.antMatchers("/profiles/**").hasAuthority("SCOPE_access-hello")
                 .anyRequest().permitAll()
         );
 

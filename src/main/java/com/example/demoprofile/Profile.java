@@ -3,6 +3,13 @@ package com.example.demoprofile;
 public class Profile {
     private String id;
 
+    public Profile() {
+    }
+
+    public Profile(String id) {
+        this.id = id;
+    }
+
     public String getId() {
         return id;
     }
